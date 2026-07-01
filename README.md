@@ -33,6 +33,6 @@ npm run build
 
 ## Project Notes
 
-This site uses the Sites-compatible vinext starter with React, Vite, and
-Tailwind CSS. The app source lives under `app/` to preserve the selected Sites
-starter structure.
+This site publishes through GitHub Pages from the static Vite app under `src/`.
+The GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds the
+site and deploys the `dist/` artifact whenever `main` is pushed.
