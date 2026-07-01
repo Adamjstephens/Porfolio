@@ -1,4 +1,4 @@
-name: Deploy CompassQA Suite
+name: Deploy MirrorFlow Suite
 
 on:
   push:

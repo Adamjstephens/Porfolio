@@ -1,16 +1,22 @@
 export type ToolIconName =
-  | "AudioLines"
-  | "ClipboardCheck"
   | "PanelsTopLeft"
   | "Gauge"
   | "Sparkles"
   | "MailPlus";
+
+export type Screenshot = {
+  src: string;
+  alt: string;
+  caption: string;
+};
 
 export type Tool = {
   slug: string;
   name: string;
   badge: string;
   icon: ToolIconName;
+  color: string;
+  accent: string;
   shortDescription: string;
   purpose: string;
   summary: string;
@@ -18,197 +24,326 @@ export type Tool = {
   tags: string[];
   bestFor: string[];
   whyItMatters: string;
+  screenshots: Screenshot[];
+  metrics: { label: string; value: string }[];
+  workflow: string[];
+  modes: { label: string; detail: string }[];
 };
 
 export const tools: Tool[] = [
   {
-    slug: "compassqa-transcribe",
-    name: "CompassQA Transcribe",
-    badge: "Transcription",
-    icon: "AudioLines",
+    slug: "mirrorctt",
+    name: "MirrorCTT",
+    badge: "Credit Tracking",
+    icon: "Gauge",
+    color: "from-blue-600 to-cyan-400",
+    accent: "cyan",
     shortDescription:
-      "Turn call audio into clean transcripts for faster review and coaching.",
-    purpose: "Converts calls or audio into readable transcripts for review.",
+      "Track leads, booked appointment credits, callbacks, saved cards, and availability moments from one high-visibility workflow.",
+    purpose:
+      "A performance dashboard for reps who need lead reflection, credit tracking, callbacks, and daily progress in one place.",
     summary:
-      "CompassQA Transcribe helps turn call audio into clean, usable text so calls can be reviewed faster and more consistently.",
+      "MirrorCTT is the advanced center of MirrorFlow Suite. It builds on lead reflection and adds booked appointment credits, disposition logic, callback alarms, saved lead cards, and EST-aware availability reminders.",
     features: [
-      "Upload or process call audio",
-      "Generate readable transcripts",
-      "Help QA reviewers move faster",
-      "Support coaching, compliance checks, and call summaries",
+      "Track daily credits, total bookings, dialer bookings, and claim bookings",
+      "Save lead cards with customer, agent, phone, Clover link, source, and timestamp",
+      "Select booked appointment, other, and rejection dispositions",
+      "Use rejection subtypes to make pattern review easier",
+      "Set quick callbacks and surface overdue callback cards",
+      "Separate claim and dialer work for clearer performance visibility",
     ],
-    tags: ["Transcription", "QA", "Coaching"],
-    bestFor: ["QA reviewers", "Call coaches", "Teams reviewing call audio"],
-    whyItMatters:
-      "Reliable transcripts make it easier to review calls, spot patterns, and coach from the same source of truth.",
-  },
-  {
-    slug: "compassqa",
-    name: "CompassQA",
-    badge: "QA Review",
-    icon: "ClipboardCheck",
-    shortDescription:
-      "Organize call reviews, QA notes, and quality standards in one place.",
-    purpose: "QA review and scoring support.",
-    summary:
-      "CompassQA helps organize call reviews, track quality standards, and make coaching feedback easier to understand.",
-    features: [
-      "Review calls against client-specific rules",
-      "Organize QA notes",
-      "Support agent coaching",
-      "Track missed requirements, call issues, and booking quality",
+    tags: ["Credits", "Callbacks", "Lead reflection", "Booking visibility"],
+    bestFor: [
+      "Booking teams motivated by live credit progress",
+      "Reps managing claims, dialer calls, and callbacks",
+      "Trainers reviewing saved lead outcomes",
     ],
-    tags: ["QA", "Coaching", "Review"],
-    bestFor: ["QA teams", "Team leads", "Client-specific review workflows"],
     whyItMatters:
-      "Structured review support keeps feedback clearer, more consistent, and easier to act on.",
+      "MirrorCTT turns each saved lead into useful context: what happened, how it counted, when follow-up is due, and how the day is trending.",
+    screenshots: [
+      {
+        src: "/product-shots/mirrorctt-dashboard.png",
+        alt: "MirrorCTT dashboard with credit cards and action buttons",
+        caption: "Daily credit dashboard",
+      },
+      {
+        src: "/product-shots/mirrorctt-disposition.png",
+        alt: "MirrorCTT disposition menu",
+        caption: "Disposition selection",
+      },
+      {
+        src: "/product-shots/mirrorctt-rejection-menu.png",
+        alt: "MirrorCTT rejection subtype menu",
+        caption: "Rejection pattern capture",
+      },
+      {
+        src: "/product-shots/mirrorctt-callback-card.png",
+        alt: "MirrorCTT saved lead card with quick callback",
+        caption: "Callback card",
+      },
+      {
+        src: "/product-shots/mirrorctt-booking-card.png",
+        alt: "MirrorCTT booked appointment card with credits",
+        caption: "Booked appointment card",
+      },
+    ],
+    metrics: [
+      { label: "credit states", value: "4" },
+      { label: "lead outcomes", value: "multi" },
+      { label: "callback focus", value: "live" },
+    ],
+    workflow: [
+      "Capture the current lead",
+      "Choose the outcome or rejection reason",
+      "Update credit and booking visibility",
+      "Reuse the saved card for coaching or follow-up",
+    ],
+    modes: [
+      {
+        label: "Save lead",
+        detail:
+          "Capture customer, source, agent, Clover link, timestamp, and disposition without retyping the whole interaction.",
+      },
+      {
+        label: "Track credits",
+        detail:
+          "Show credits and booking counts at the top of the workflow so progress stays visible during the shift.",
+      },
+      {
+        label: "Callbacks",
+        detail:
+          "Create quick reminders and keep overdue callbacks visible so follow-up work does not disappear.",
+      },
+    ],
   },
   {
     slug: "mirrorcxt",
     name: "MirrorCXT",
-    badge: "Customer Experience Tool",
+    badge: "Lead Reflection",
     icon: "PanelsTopLeft",
+    color: "from-sky-600 to-violet-500",
+    accent: "violet",
     shortDescription:
-      "Save lead interactions, categorize outcomes, and create a simple reflection trail for coaching and professional growth.",
+      "Save lead outcomes, rejection reasons, CRM links, and context so new onboardees can reflect and improve.",
     purpose:
-      "Helps new onboardees manage the leads they interact with so they can better track their progress as they develop professionally.",
+      "A reflection-focused lead tracker for onboarding, coaching, and professional growth.",
     summary:
-      "MirrorCXT helps new team members save, categorize, and reflect on the leads they interact with, without turning lead tracking into a chore. With a few clicks, users can capture the customer details, Clover CRM link, timestamp, agent, source, and outcome of the interaction, then reuse that information later for coaching, team review, or personal reflection.",
+      "MirrorCXT helps newer team members remember what happened on each lead, categorize outcomes, and share clean context with trainers or internal teams.",
     features: [
       "Save lead interactions in a few clicks",
-      "Capture customer name, address, Clover CRM link, timestamp, agent, and lead source",
-      "Mark outcomes like booked appointment, rejection, claim, dialer call, or other",
-      "Choose from common rejection types instead of manually typing everything",
-      "Save booked appointment details for later review",
-      "Click a saved lead card to copy the key information",
-      "Paste copied lead details into Teams or another internal channel",
-      "Send calls or leads to internal teams with the right context attached",
-      "Help new onboardees reflect on their performance and growth",
-      "Reduce the mental load of remembering and organizing call outcomes",
+      "Capture Clover links, customer details, agent, source, and timestamp",
+      "Categorize booked appointments, claims, dialer calls, rejections, and other outcomes",
+      "Use common rejection reasons instead of manually writing every detail",
+      "Copy saved lead details into Teams or another internal channel",
+      "Build a reflection trail for coaching and growth",
     ],
-    tags: ["Lead Reflection", "Workflow", "Onboarding"],
+    tags: ["Onboarding", "Reflection", "Lead context", "Coaching"],
     bestFor: [
-      "New onboardee training",
-      "Lead outcome reflection",
-      "Sharing lead context with trainers",
+      "New onboardees learning lead handling",
+      "Trainers reviewing real interaction patterns",
+      "Teams that need cleaner lead context",
     ],
     whyItMatters:
-      "MirrorCXT is a reflection and development tool. It helps users remember what happened on each lead, identify rejection patterns, and share useful context without heavy manual tracking.",
-  },
-  {
-    slug: "mirrorctt",
-    name: "MirrorCTT",
-    badge: "Customer / Credit Tracking Tool",
-    icon: "Gauge",
-    shortDescription:
-      "Track leads, credits, callbacks, available time, and daily performance from one workflow-focused dashboard.",
-    purpose:
-      "Helps users save leads, reflect on progress, track credits from booked appointments, stay aware of available-time blocks, and manage callbacks efficiently.",
-    summary:
-      "MirrorCTT builds on the reflection-focused lead tracking of MirrorCXT and adds real-time credit tracking, availability reminders, callback tools, and productivity support. It helps users understand not only which leads they interacted with, but also how those interactions are contributing to their daily performance.",
-    features: [
-      "Save and categorize lead interactions",
-      "Track booked appointments and credits",
-      "Support default and client-specific credit dispositions",
-      "Show daily credit progress",
-      "Separate claim and dialer booking tracking",
-      "Display company-standard EST time",
-      "Manage available-time blocks",
-      "Alert users before and during available time",
-      "Prompt users to confirm they clocked in",
-      "Set quick callback reminders",
-      "Open overdue callbacks in tabs",
-      "Help users stay organized, efficient, and in control of performance",
+      "MirrorCXT makes growth visible. It reduces the mental load of remembering each call and gives team members a clean record to learn from.",
+    screenshots: [
+      {
+        src: "/product-shots/mirrorctt-callback-card.png",
+        alt: "Saved lead card showing reusable lead context",
+        caption: "Reusable saved lead card",
+      },
+      {
+        src: "/product-shots/mirrorctt-rejection-menu.png",
+        alt: "Rejection category menu for lead reflection",
+        caption: "Rejection categories",
+      },
     ],
-    tags: ["Credit Tracking", "Callbacks", "Workflow"],
-    bestFor: [
-      "Performance-driven reps",
-      "Credit and booking visibility",
-      "Callback and availability management",
+    metrics: [
+      { label: "reflection trail", value: "clear" },
+      { label: "copy-ready cards", value: "yes" },
+      { label: "training load", value: "lower" },
     ],
-    whyItMatters:
-      "MirrorCTT is the larger workflow layer: saved leads feed reflection, credit tracking, claim versus dialer visibility, availability reminders, and callback completion.",
+    workflow: [
+      "Save the interaction",
+      "Choose the outcome",
+      "Attach CRM and customer context",
+      "Review patterns with a trainer",
+    ],
+    modes: [
+      {
+        label: "Capture",
+        detail:
+          "Keep the important lead details together before they get lost in the next call.",
+      },
+      {
+        label: "Reflect",
+        detail:
+          "Turn repeated rejections and outcomes into patterns a new team member can actually review.",
+      },
+      {
+        label: "Share",
+        detail:
+          "Copy the card into internal channels with the right context already attached.",
+      },
+    ],
   },
   {
     slug: "clickai",
     name: "ClickAi",
     badge: "AI Assistant",
     icon: "Sparkles",
+    color: "from-emerald-500 to-teal-400",
+    accent: "emerald",
     shortDescription:
-      "Highlight text, send it to ChatGPT, and run preset prompts for faster communication and workflow support.",
+      "Highlight text, trigger a shortcut, and send it into the right AI prompt without breaking workflow.",
     purpose:
-      "Quick AI-powered assistance for repetitive writing, response, and workflow tasks.",
+      "A lightweight AI helper for fast rewriting, interpreting, translating, and response support.",
     summary:
-      "ClickAi is a lightweight AI helper built for speed. Highlight text, launch it into ChatGPT, and use preset prompts to translate, explain, rewrite, or respond faster without interrupting the workflow.",
+      "ClickAi keeps AI close to the workflow. It supports keyboard shortcuts, mouse binds, configurable destinations, prompt modes, and custom prompt text.",
     features: [
-      "Highlight text and send it to ChatGPT",
-      "Use customizable preset prompts",
-      "Translate, explain, rewrite, or generate responses quickly",
-      "Support customer-message interpretation",
-      "Speed up repetitive communication tasks",
-      "Include DQ or disqualification workflow support where applicable",
+      "Send selected text with one button",
+      "Use keyboard shortcuts or recorded mouse binds",
+      "Route prompts to ChatGPT or a configured agent",
+      "Switch prompt modes for rewriting, explaining, translating, or responding",
+      "Open target workflow URLs before pasting into the best field",
+      "Support DQ and customer-message interpretation tasks",
     ],
-    tags: ["AI Assistant", "Workflow", "Communication"],
-    bestFor: ["Quick rewrites", "Message interpretation", "Prompt shortcuts"],
+    tags: ["AI assistant", "Shortcuts", "Prompt modes", "Text routing"],
+    bestFor: [
+      "Fast customer-message interpretation",
+      "Repeated rewrite and response tasks",
+      "Keyboard-first workflows",
+    ],
     whyItMatters:
-      "Fast AI access reduces context switching during repetitive writing and customer-response work.",
+      "ClickAi cuts down on copy/paste drift. It makes AI assistance feel like a native action instead of a separate tab-management chore.",
+    screenshots: [
+      {
+        src: "/product-shots/clickai-settings.png",
+        alt: "ClickAi settings panel with mode and prompt controls",
+        caption: "Shortcut and prompt settings",
+      },
+    ],
+    metrics: [
+      { label: "trigger modes", value: "2" },
+      { label: "prompt routing", value: "custom" },
+      { label: "selected text", value: "instant" },
+    ],
+    workflow: [
+      "Highlight source text",
+      "Trigger ClickAi",
+      "Apply the selected prompt mode",
+      "Use the AI response without losing the workflow",
+    ],
+    modes: [
+      {
+        label: "Tool mode",
+        detail:
+          "Switch shared shortcut behavior between ClickAi and adjacent workflow helpers.",
+      },
+      {
+        label: "Prompt mode",
+        detail:
+          "Prefix selected text with the right instruction for the task in front of the user.",
+      },
+      {
+        label: "Send target",
+        detail:
+          "Route selected text to ChatGPT or another configured destination.",
+      },
+    ],
   },
   {
     slug: "email-template-builder",
     name: "Email Template Builder",
     badge: "Templates",
     icon: "MailPlus",
+    color: "from-teal-500 to-cyan-300",
+    accent: "teal",
     shortDescription:
-      "Create polished, reusable client emails for booking updates, reschedules, cancellations, and support requests.",
+      "Build polished client emails from scraped context, fill-in fields, and reusable cancellation or scheduling templates.",
     purpose:
-      "Professional email template creation for client and booking communication.",
+      "A client email workspace for booking updates, reschedules, cancellations, no-availability messages, and Outlook prep.",
     summary:
-      "The Email Template Builder helps create clean, professional emails for booking updates, reschedules, cancellations, no-availability issues, and client communication.",
+      "Email Template Builder turns customer and appointment context into clean email copy. It keeps subject, body, client selection, and Outlook actions together in one focused panel.",
     features: [
-      "Build fill-in-the-blank email templates",
-      "Generate professional client-ready wording",
-      "Support booking updates, reschedules, cancellations, and no-availability messages",
-      "Pull or organize customer details where applicable",
-      "Open or prepare polished emails for Outlook",
-      "Reduce formatting mistakes and save time",
+      "Scrape page context and surface matched client details",
+      "Switch clients and template categories",
+      "Generate cancellation, reschedule, and no-availability wording",
+      "Preview subject and body before copying",
+      "Copy subject or body independently",
+      "Open Outlook with polished client-ready copy",
     ],
-    tags: ["Templates", "Communication", "Outlook"],
-    bestFor: ["Client updates", "Booking communication", "Reusable templates"],
+    tags: ["Templates", "Outlook", "Client email", "Booking updates"],
+    bestFor: [
+      "Booking update emails",
+      "Cancellation and reschedule requests",
+      "Reducing formatting mistakes",
+    ],
     whyItMatters:
-      "Reusable email structure helps teams communicate clearly while reducing formatting mistakes and repeated drafting.",
+      "The builder makes client communication consistent while still leaving room for the user to verify details before sending.",
+    screenshots: [
+      {
+        src: "/product-shots/email-template-builder.png",
+        alt: "Email Template Builder client and template selection panel",
+        caption: "Template controls",
+      },
+      {
+        src: "/product-shots/email-template-output.png",
+        alt: "Email Template Builder subject and body output panel",
+        caption: "Subject and body preview",
+      },
+    ],
+    metrics: [
+      { label: "copy actions", value: "3" },
+      { label: "template types", value: "multi" },
+      { label: "Outlook handoff", value: "ready" },
+    ],
+    workflow: [
+      "Scrape or enter customer context",
+      "Choose client and template type",
+      "Review generated subject and body",
+      "Copy or open Outlook",
+    ],
+    modes: [
+      {
+        label: "Client",
+        detail:
+          "Keep client-specific language and routing choices close to the message draft.",
+      },
+      {
+        label: "Template",
+        detail:
+          "Switch between common communication scenarios without rebuilding the email.",
+      },
+      {
+        label: "Output",
+        detail:
+          "Review subject and body together before copying or opening Outlook.",
+      },
+    ],
   },
 ];
 
 export const benefits = [
   {
-    title: "Faster QA reviews",
-    copy: "Turn calls, notes, and lead context into something easier to review and coach from.",
+    title: "Real product context",
+    copy: "Screenshots and workflows show the tools as operators actually use them.",
   },
   {
-    title: "Cleaner customer communication",
-    copy: "Use templates and AI support to respond with more consistency and less hesitation.",
+    title: "Less repeated manual work",
+    copy: "Capture, categorize, copy, and route information without rebuilding the same context all day.",
   },
   {
-    title: "Better lead reflection",
-    copy: "Save what happened on each interaction so agents can review patterns, rejections, and wins later.",
+    title: "Better reflection loops",
+    copy: "Saved leads, outcomes, rejection reasons, and callbacks become a trail for coaching and professional growth.",
   },
   {
-    title: "More organized onboarding",
-    copy: "Give new team members a simpler way to track their calls, bookings, and learning progress.",
-  },
-  {
-    title: "Real-time credit visibility",
-    copy: "Help performance-driven users see their credits, bookings, and progress throughout the day.",
-  },
-  {
-    title: "Less repetitive manual work",
-    copy: "Reduce the copying, pasting, remembering, and retyping required during busy shifts.",
+    title: "Faster communication",
+    copy: "AI prompts and template actions help users respond clearly without drifting away from the workflow.",
   },
 ];
 
 export const useCases = [
   "New onboardee training",
-  "Call center QA",
   "Home improvement booking teams",
   "Lead follow-up workflows",
   "Internal coaching",
@@ -217,5 +352,4 @@ export const useCases = [
   "Credit tracking",
   "Callback management",
   "Available-time reminders",
-  "Team review and reflection",
 ];

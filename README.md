@@ -1,15 +1,16 @@
-# CompassQA Suite Website
+# MirrorFlow Suite Website
 
-Professional marketing website for CompassQA Suite, a connected set of tools
-for QA review, transcription, lead reflection, credit tracking, callbacks,
-email templates, and AI-assisted workflow support.
+Professional marketing website for MirrorFlow Suite, a connected set of tools
+for MirrorCXT, MirrorCTT, Email Template Builder, and ClickAi. The site focuses
+on lead reflection, credit tracking, callbacks, email templates, and AI-assisted
+workflow support.
 
 ## Pages
 
 - Home
 - Tools
 - About
-- Contact
+- One page per tool
 
 ## Content Model
 
