@@ -11,6 +11,26 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.__loadMirrorFlowFallback = function () {
+        if (!window.location.hostname.includes("github.io")) return;
+        var cssHref = "/Porfolio/assets/index-9Qqyczey.css";
+        if (!document.querySelector('link[href="' + cssHref + '"]')) {
+          var link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = cssHref;
+          document.head.appendChild(link);
+        }
+        var script = document.createElement("script");
+        script.type = "module";
+        script.src = "/Porfolio/assets/index-DXV_0JYF.js";
+        document.body.appendChild(script);
+      };
+    </script>
+    <script
+      type="module"
+      src="/src/main.tsx"
+      onerror="window.__loadMirrorFlowFallback()"
+    ></script>
   </body>
 </html>
