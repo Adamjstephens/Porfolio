@@ -1,9 +1,9 @@
 # MirrorFlow Suite Website
 
-Professional marketing website for MirrorFlow Suite, a connected set of tools
+Professional portfolio website for MirrorFlow Suite, a connected set of tools
 for MirrorCXT, MirrorCTT, Email Template Builder, and ClickAi. The site focuses
-on lead reflection, credit tracking, callbacks, email templates, and AI-assisted
-workflow support.
+on time saved, credit-incentivized lead tracking, QA visibility, callbacks,
+email templates, and AI-assisted workflow support.
 
 ## Pages
 

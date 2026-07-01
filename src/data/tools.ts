@@ -39,27 +39,27 @@ export const tools: Tool[] = [
     color: "from-blue-600 to-cyan-400",
     accent: "cyan",
     shortDescription:
-      "Track leads, booked appointment credits, callbacks, saved cards, and availability moments from one high-visibility workflow.",
+      "Make booked appointments, callbacks, and saved lead context visible while giving reps a live credit target to work toward.",
     purpose:
-      "A performance dashboard for reps who need lead reflection, credit tracking, callbacks, and daily progress in one place.",
+      "A performance and QA visibility layer for reps who need lead reflection, credit tracking, callbacks, and daily progress in one place.",
     summary:
-      "MirrorCTT is the advanced center of MirrorFlow Suite. It builds on lead reflection and adds booked appointment credits, disposition logic, callback alarms, saved lead cards, and EST-aware availability reminders.",
+      "MirrorCTT is the advanced center of MirrorFlow Suite. It connects rep motivation with operational evidence by combining booked appointment credits, disposition logic, callback alarms, saved lead cards, and EST-aware availability reminders.",
     features: [
-      "Track daily credits, total bookings, dialer bookings, and claim bookings",
+      "Track daily credits, total bookings, dialer bookings, and claim bookings in real time",
       "Save lead cards with customer, agent, phone, Clover link, source, and timestamp",
       "Select booked appointment, other, and rejection dispositions",
-      "Use rejection subtypes to make pattern review easier",
+      "Use rejection subtypes to make QA pattern review easier",
       "Set quick callbacks and surface overdue callback cards",
       "Separate claim and dialer work for clearer performance visibility",
     ],
     tags: ["Credits", "Callbacks", "Lead reflection", "Booking visibility"],
     bestFor: [
-      "Booking teams motivated by live credit progress",
+      "Booking teams motivated by visible credit progress",
       "Reps managing claims, dialer calls, and callbacks",
       "Trainers reviewing saved lead outcomes",
     ],
     whyItMatters:
-      "MirrorCTT turns each saved lead into useful context: what happened, how it counted, when follow-up is due, and how the day is trending.",
+      "MirrorCTT turns each saved lead into useful context: what happened, how it counted, when follow-up is due, and what QA or coaching patterns are forming.",
     screenshots: [
       {
         src: "/product-shots/mirrorctt-dashboard.png",
@@ -89,14 +89,14 @@ export const tools: Tool[] = [
     ],
     metrics: [
       { label: "credit states", value: "4" },
-      { label: "lead outcomes", value: "multi" },
+      { label: "QA-ready outcomes", value: "multi" },
       { label: "callback focus", value: "live" },
     ],
     workflow: [
       "Capture the current lead",
       "Choose the outcome or rejection reason",
       "Update credit and booking visibility",
-      "Reuse the saved card for coaching or follow-up",
+      "Reuse the saved card for QA, coaching, or follow-up",
     ],
     modes: [
       {
@@ -124,17 +124,17 @@ export const tools: Tool[] = [
     color: "from-sky-600 to-violet-500",
     accent: "violet",
     shortDescription:
-      "Save lead outcomes, rejection reasons, CRM links, and context so new onboardees can reflect and improve.",
+      "Capture lead context and rejection patterns so new onboardees can learn faster and trainers can review real examples.",
     purpose:
-      "A reflection-focused lead tracker for onboarding, coaching, and professional growth.",
+      "A reflection-focused lead tracker for onboarding, coaching, QA context, and professional growth.",
     summary:
-      "MirrorCXT helps newer team members remember what happened on each lead, categorize outcomes, and share clean context with trainers or internal teams.",
+      "MirrorCXT helps newer team members remember what happened on each lead, categorize outcomes, and share clean context with trainers, QA, or internal teams.",
     features: [
       "Save lead interactions in a few clicks",
       "Capture Clover links, customer details, agent, source, and timestamp",
       "Categorize booked appointments, claims, dialer calls, rejections, and other outcomes",
       "Use common rejection reasons instead of manually writing every detail",
-      "Copy saved lead details into Teams or another internal channel",
+      "Copy saved lead details into Teams, QA notes, or another internal channel",
       "Build a reflection trail for coaching and growth",
     ],
     tags: ["Onboarding", "Reflection", "Lead context", "Coaching"],
@@ -144,7 +144,7 @@ export const tools: Tool[] = [
       "Teams that need cleaner lead context",
     ],
     whyItMatters:
-      "MirrorCXT makes growth visible. It reduces the mental load of remembering each call and gives team members a clean record to learn from.",
+      "MirrorCXT makes growth visible. It reduces the mental load of remembering each call and gives team members a clean record that can be coached, audited, and improved.",
     screenshots: [
       {
         src: "/product-shots/mirrorctt-callback-card.png",
@@ -159,7 +159,7 @@ export const tools: Tool[] = [
     ],
     metrics: [
       { label: "reflection trail", value: "clear" },
-      { label: "copy-ready cards", value: "yes" },
+      { label: "QA context", value: "copy-ready" },
       { label: "training load", value: "lower" },
     ],
     workflow: [
@@ -196,9 +196,9 @@ export const tools: Tool[] = [
     shortDescription:
       "Highlight text, trigger a shortcut, and send it into the right AI prompt without breaking workflow.",
     purpose:
-      "A lightweight AI helper for fast rewriting, interpreting, translating, and response support.",
+      "A lightweight AI helper for fast rewriting, interpreting, translating, and response support inside existing workflows.",
     summary:
-      "ClickAi keeps AI close to the workflow. It supports keyboard shortcuts, mouse binds, configurable destinations, prompt modes, and custom prompt text.",
+      "ClickAi keeps AI close to the workflow. It supports keyboard shortcuts, mouse binds, configurable destinations, prompt modes, and custom prompt text so the user gets help without losing context.",
     features: [
       "Send selected text with one button",
       "Use keyboard shortcuts or recorded mouse binds",
@@ -214,7 +214,7 @@ export const tools: Tool[] = [
       "Keyboard-first workflows",
     ],
     whyItMatters:
-      "ClickAi cuts down on copy/paste drift. It makes AI assistance feel like a native action instead of a separate tab-management chore.",
+      "ClickAi cuts down on copy/paste drift. It makes AI assistance feel like a native action instead of a separate tab-management chore, which is where seconds compound into real time saved.",
     screenshots: [
       {
         src: "/product-shots/clickai-settings.png",
@@ -259,11 +259,11 @@ export const tools: Tool[] = [
     color: "from-teal-500 to-cyan-300",
     accent: "teal",
     shortDescription:
-      "Build polished client emails from scraped context, fill-in fields, and reusable cancellation or scheduling templates.",
+      "Generate consistent client emails from scraped context, fill-in fields, and reusable cancellation or scheduling templates.",
     purpose:
-      "A client email workspace for booking updates, reschedules, cancellations, no-availability messages, and Outlook prep.",
+      "A client email workspace for booking updates, reschedules, cancellations, no-availability messages, and Outlook handoff.",
     summary:
-      "Email Template Builder turns customer and appointment context into clean email copy. It keeps subject, body, client selection, and Outlook actions together in one focused panel.",
+      "Email Template Builder turns customer and appointment context into clean email copy. It keeps subject, body, client selection, and Outlook actions together so the user can move quickly without sacrificing consistency.",
     features: [
       "Scrape page context and surface matched client details",
       "Switch clients and template categories",
@@ -279,7 +279,7 @@ export const tools: Tool[] = [
       "Reducing formatting mistakes",
     ],
     whyItMatters:
-      "The builder makes client communication consistent while still leaving room for the user to verify details before sending.",
+      "The builder makes client communication consistent while still leaving room for the user to verify details before sending. It reduces repetitive writing and lowers the risk of missed fields.",
     screenshots: [
       {
         src: "/product-shots/email-template-builder.png",
@@ -326,7 +326,7 @@ export const tools: Tool[] = [
 export const benefits = [
   {
     title: "Real product context",
-    copy: "Screenshots and workflows show the tools as operators actually use them.",
+    copy: "The tools are shaped around real operator behavior, not abstract demo flows.",
   },
   {
     title: "Less repeated manual work",
@@ -334,7 +334,7 @@ export const benefits = [
   },
   {
     title: "Better reflection loops",
-    copy: "Saved leads, outcomes, rejection reasons, and callbacks become a trail for coaching and professional growth.",
+    copy: "Saved leads, outcomes, rejection reasons, and callbacks become a trail for coaching, QA, and professional growth.",
   },
   {
     title: "Faster communication",
