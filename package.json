@@ -5,18 +5,16 @@
   "engines": {
     "node": ">=22.13.0"
   },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "start": "vite preview",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern assets --ignore-pattern .next",
-    "db:generate": "drizzle-kit generate"
+ "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "drizzle-orm": "0.45.2",
-    "next": "16.2.6",
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "next": "14.x",
+    "react": "...",
+    "react-dom": "..."
+  }
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",
