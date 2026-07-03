@@ -27,7 +27,6 @@
     "drizzle-kit": "0.31.10",
     "eslint": "8.56.0",
     "eslint-config-next": "14.2.35",
-    "react-server-dom-webpack": "19.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "vinext": "0.0.50",
