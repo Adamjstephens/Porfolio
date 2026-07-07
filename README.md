@@ -15,7 +15,7 @@ email templates, and AI-assisted workflow support.
 ## Content Model
 
 All tool names, badges, descriptions, tags, features, best-for details, and
-why-it-matters copy live in `app/data/tools.ts`.
+why-it-matters copy live in `src/data/tools.ts`.
 
 ## Local Development
 
