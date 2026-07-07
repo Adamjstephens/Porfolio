@@ -13,6 +13,20 @@ function normalizePath(pathname: string) {
   return withoutBase === "" ? "/" : withoutBase;
 }
 
+function getInitialRoute() {
+  const params = new URLSearchParams(window.location.search);
+  const redirectPath = params.get("p");
+
+  if (redirectPath) {
+    const normalized = normalizePath(redirectPath);
+    const nextUrl = `${basePath}${normalized === "/" ? "" : normalized}`;
+    window.history.replaceState({}, "", nextUrl);
+    return normalized;
+  }
+
+  return normalizePath(window.location.pathname);
+}
+
 function localHref(path: string) {
   return `${basePath}${path === "/" ? "" : path}`;
 }
@@ -919,7 +933,7 @@ function AboutPage() {
 }
 
 function App() {
-  const route = useMemo(() => normalizePath(window.location.pathname), []);
+  const route = useMemo(() => getInitialRoute(), []);
   const toolSlug = route.startsWith("/tools/") ? route.split("/")[2] : null;
   const tool = tools.find((item) => item.slug === toolSlug);
 
